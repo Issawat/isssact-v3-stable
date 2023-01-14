@@ -1,18 +1,18 @@
 import { NextPage } from "next";
 import { DefaultLayout } from "../layouts/Default";
-import { Text } from "@mantine/core";
+import { Text, Title } from "@mantine/core";
 import Link from "next/link";
 
 const HomePage: NextPage = () => {
   return (
     <DefaultLayout>
-      <Text variant="text" size={10}>
+      <Title variant="text" color="gray">
         มีอะไรใหม่ 🧐
-      </Text>
+      </Title>
       <Link href={`/articles`}></Link>
-      <Text variant="text" size={10}>
+      <Title variant="text" color="gray">
         แนะนำให้อ่าน 🙂
-      </Text>
+      </Title>
     </DefaultLayout>
   );
 };
