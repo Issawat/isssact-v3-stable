@@ -10,6 +10,9 @@ const HomePage: NextPage = () => {
         มีอะไรใหม่ 🧐
       </Text>
       <Link href={`/articles`}></Link>
+      <Text variant="text" size={10}>
+        แนะนำให้อ่าน 🙂
+      </Text>
     </DefaultLayout>
   );
 };

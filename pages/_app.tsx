@@ -5,10 +5,9 @@ import {
 } from "@mantine/core";
 import type { AppProps } from "next/app";
 
-import { Inter } from "@next/font/google";
 import Head from "next/head";
 import { useState } from "react";
-const interFont = Inter({ subsets: ["latin"] });
+import { THEME_CONFIG } from "../configs/theme";
 
 const App = ({ Component, pageProps }: AppProps) => {
   const [colorScheme, setColorScheme] = useState<ColorScheme>("light");
@@ -25,16 +24,14 @@ const App = ({ Component, pageProps }: AppProps) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/icon.png" />
       </Head>
-      <div className={interFont.className}>
-        <ColorSchemeProvider
-          colorScheme={colorScheme}
-          toggleColorScheme={toggleColorScheme}
-        >
-          <MantineProvider withGlobalStyles withNormalizeCSS>
-            <Component {...pageProps} />
-          </MantineProvider>
-        </ColorSchemeProvider>
-      </div>
+      <ColorSchemeProvider
+        colorScheme={colorScheme}
+        toggleColorScheme={toggleColorScheme}
+      >
+        <MantineProvider withGlobalStyles withNormalizeCSS theme={THEME_CONFIG}>
+          <Component {...pageProps} />
+        </MantineProvider>
+      </ColorSchemeProvider>
     </>
   );
 };
