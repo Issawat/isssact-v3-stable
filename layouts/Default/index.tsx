@@ -30,15 +30,15 @@ export const DefaultLayout = ({ children }: Props) => {
   const { colorScheme } = useMantineColorScheme();
   return (
     <AppShell
-      padding="md"
+      padding="xl"
       header={
-        <Header height={60} p="lg">
-          <Group sx={{ height: "100%" }} px={20} position="apart">
+        <Header height={80} pr="md" pt="md">
+          <Group position="apart">
             <Image
               src="./logo.svg"
               alt="isssact-logo"
-              width={100}
-              height={20}
+              width={150}
+              height={30}
             />
             <Menu />
           </Group>

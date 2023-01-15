@@ -7,7 +7,7 @@ import type { AppProps } from "next/app";
 
 import Head from "next/head";
 import { useState } from "react";
-import { KANIT_FONT, THEME_CONFIG } from "../configs/theme";
+import { THEME_CONFIG } from "../configs/theme";
 
 const App = ({ Component, pageProps }: AppProps) => {
   const [colorScheme, setColorScheme] = useState<ColorScheme>("light");
@@ -25,7 +25,6 @@ const App = ({ Component, pageProps }: AppProps) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/icon.png" />
       </Head>
-      <>Hello</>
       <ColorSchemeProvider
         colorScheme={colorScheme}
         toggleColorScheme={toggleColorScheme}

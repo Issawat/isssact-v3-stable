@@ -7,6 +7,12 @@ export const KANIT_FONT = Kanit({
 });
 
 export const THEME_CONFIG: MantineProviderProps["theme"] = {
+  primaryColor: "indigo",
+  defaultGradient: {
+    deg : 40,
+    from : 'indigo',
+    to: 'blue'
+  },
   fontFamily: KANIT_FONT.style.fontFamily,
   fontFamilyMonospace: "Monaco, Courier, monospace",
   headings: { fontFamily: KANIT_FONT.style.fontFamily, fontWeight: 300 },
