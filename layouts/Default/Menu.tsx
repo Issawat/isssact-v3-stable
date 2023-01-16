@@ -74,8 +74,8 @@ export const Menu = () => {
               isDarkMode ? theme.colors.dark[9] : theme.colors.gray[0]
             }
             position="top"
-            overlayOpacity={0.55}
-            overlayBlur={3}
+            overlayOpacity={0.4}
+            overlayBlur={5}
             opened={opened}
             onClose={() => setOpened(false)}
             withCloseButton={false}
@@ -98,7 +98,7 @@ export const Menu = () => {
                 height={30}
                 style={{
                   filter: isDarkMode ? "invert(100%)" : undefined,
-                  marginBottom: '20px'
+                  marginBottom: "20px",
                 }}
               />
               <Link href="/">
@@ -125,13 +125,16 @@ export const Menu = () => {
                 </Button>
               </Link>
               <ColorModeToggle />
-              <Box mt="md">
+              <Box
+                mt="md"
+                onClick={() => setOpened(false)}
+                sx={{ cursor: "pointer" }}
+              >
                 <ChevronIcon
                   width="25px"
                   height="25px"
                   color="silver"
                   transform="rotate(180, 0, 0)"
-                  onClick={() => setOpened(false)}
                 />
               </Box>
             </Flex>
