@@ -1,4 +1,13 @@
-import { Box, Text, Image, SimpleGrid, Title, Sx, Stack } from "@mantine/core";
+import {
+  Box,
+  Text,
+  Image,
+  SimpleGrid,
+  Title,
+  Sx,
+  Stack,
+  MediaQuery,
+} from "@mantine/core";
 import { CMSPost } from "../types/CMSTypes";
 import dayjs from "dayjs";
 
@@ -36,7 +45,11 @@ const NormalPostCard = ({ post }: Omit<PostCardOptions, "expanded">) => (
   <Box m="md" p="lg" sx={CardSX}>
     <Image src={post?.featured_image as string} alt="post-img" radius="lg" />
     <Stack spacing="md" mt="md">
-      <Title size="25px" color="cyan" sx={{ fontWeight: "normal", fontStyle: "italic" }}>
+      <Title
+        size="25px"
+        color="cyan"
+        sx={{ fontWeight: "normal", fontStyle: "italic" }}
+      >
         {post?.title}
       </Title>
       <Text color="silver">
@@ -51,7 +64,17 @@ const NormalPostCard = ({ post }: Omit<PostCardOptions, "expanded">) => (
 );
 
 export const PostCard = ({ post, expanded = false }: PostCardOptions) => {
-  if (expanded) return <ExpandedPostCard post={post} />;
+  if (expanded)
+    return (
+      <>
+        <MediaQuery smallerThan="md" styles={{ display: "none" }}>
+          <ExpandedPostCard post={post} />
+        </MediaQuery>
+        <MediaQuery largerThan="md" styles={{ display: "none" }}>
+          <NormalPostCard post={post} />
+        </MediaQuery>
+      </>
+    );
 
   return <NormalPostCard post={post} />;
 };

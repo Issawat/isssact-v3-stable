@@ -15,6 +15,7 @@ import { useCallback, useState } from "react";
 import { ABOUT_SLUG } from "../../services/cms";
 import { ColorModeToggle } from "./ColorModeToggle";
 import Image from "next/image";
+import { useMediaQuery } from "@mantine/hooks";
 
 export const Menu = () => {
   const { pathname } = useRouter();
