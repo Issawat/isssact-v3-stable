@@ -3,10 +3,11 @@ import { CMSPost } from "../types/CMSTypes";
 
 export const ABOUT_SLUG = "profile";
 
-const API_KEY = process.env.BUTTER_CMS_API_KEY ?? "";
+const API_KEY = process.env.NEXT_PUBLIC_BUTTER_CMS_API_KEY ?? "";
 
 export const getAllPost = () => {
   const CMS = butter(API_KEY);
+  console.debug(API_KEY)
   return new Promise<CMSPost[]>(async (resolve, reject) => {
     try {
       const rawList = await CMS.post.list();

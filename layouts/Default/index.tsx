@@ -41,8 +41,8 @@ export const DefaultLayout = ({ children }: Props) => {
           sx={{
             backgroundColor: isDarkMode
               ? "rgba(0,0,0,0.8)"
-              : "rgba(255,255,255,0.8)",
-            backdropFilter: "blur(10px)",
+              : "rgba(255,255,255,0.6)",
+            backdropFilter: "blur(7px)",
             borderBottomWidth: `0.7px`,
             borderBottomColor: "rgba(125,125,125,0.35)"
           }}
